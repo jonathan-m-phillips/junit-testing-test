@@ -19,6 +19,11 @@ public class JunitTests {
     @Test
     public void testIfGradesInitialized () {
         assertNotNull(this.grades);
+        assertEquals(1, this.grades.size());
+        this.grades.add(100);
+        assertEquals(2, this.grades.size()); // was ArrayList added to?
+        assertSame(99, this.grades.get(0)); // are the expected values in the ArrayList?
+        assertSame(100, this.grades.get(1)); // are the expected values in the ArrayList?
     }
 
     @Test
